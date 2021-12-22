@@ -30,7 +30,7 @@ public class Main {
             imgBuff = ImageIO.read(imgFile);
             BufferedImage newImageBuff = Scalr.resize(imgBuff, Scalr.Method.BALANCED, Scalr.Mode.AUTOMATIC, x, y);
             newImageBuff.createGraphics().drawImage(newImageBuff, 0, 0, Color.WHITE, null);
-            var bool0 = ImageIO.write(newImageBuff, "png", newImg);
+            var bool0 = ImageIO.write(newImageBuff, "jpg", newImg);
             newImageBuff.flush();
             var foo = "blah";
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class Main {
             Graphics2D g2D = stitchedImgBuff.createGraphics();
             var bool1 = g2D.drawImage(imgBuff1, 0, 0, null);
             var bool2 = g2D.drawImage(imgBuff2, 0, imgBuff1.getHeight(), null);
-            var bool3 = ImageIO.write(stitchedImgBuff, "JPEG", stitchImg);
+            var bool3 = ImageIO.write(stitchedImgBuff, "png", stitchImg);
             g2D.dispose();
         }
         catch (Exception e) {
