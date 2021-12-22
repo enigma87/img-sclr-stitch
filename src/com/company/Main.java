@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         File img = new File(args[0]);
         File newImg = new File(args[0] + "_scaled.jpg");
-        File stichedImage = new File(args[0] + "_stitched.jpg");
+        File stichedImage = new File(args[0] + "_stitched.png");
         int width = Integer.parseInt(args[1]);
         int height = Integer.parseInt(args[2]);
 
@@ -30,7 +30,7 @@ public class Main {
             imgBuff = ImageIO.read(imgFile);
             BufferedImage newImageBuff = Scalr.resize(imgBuff, Scalr.Method.BALANCED, Scalr.Mode.AUTOMATIC, x, y);
             newImageBuff.createGraphics().drawImage(newImageBuff, 0, 0, Color.WHITE, null);
-            var bool0 = ImageIO.write(newImageBuff, "jpeg", newImg);
+            var bool0 = ImageIO.write(newImageBuff, "png", newImg);
             newImageBuff.flush();
             var foo = "blah";
         } catch (Exception e) {
